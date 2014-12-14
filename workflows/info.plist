@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>AB7B743A-1262-4A89-99B3-376A44454C38</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>321B387F-3A93-48B8-B918-9A2A334D17B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1B211D1B-4F4F-4C07-B1EC-8A7B408FCA34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>JacksGong</string>
+	<key>description</key>
+	<string>proxy</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Proxy</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>70</integer>
+				<key>keyword</key>
+				<string>proxy</string>
+				<key>runningsubtext</key>
+				<string>loading...</string>
+				<key>script</key>
+				<string>python proxy.py "{query}"</string>
+				<key>subtext</key>
+				<string>proxy switch</string>
+				<key>title</key>
+				<string>Proxy</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AB7B743A-1262-4A89-99B3-376A44454C38</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>USER=$(Authenticate.app/Contents/MacOS/Authenticate -get username)
+PASS=$(Authenticate.app/Contents/MacOS/Authenticate -get password)
+
+if [ {query} = 'off' ]
+then
+	echo $PASS | sudo -S networksetup -setautoproxystate Wi-Fi off
+else
+	echo $PASS | sudo -S networksetup -setautoproxyurl Wi-Fi {query}
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>321B387F-3A93-48B8-B918-9A2A334D17B8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>proxy</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>1B211D1B-4F4F-4C07-B1EC-8A7B408FCA34</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1B211D1B-4F4F-4C07-B1EC-8A7B408FCA34</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>321B387F-3A93-48B8-B918-9A2A334D17B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>AB7B743A-1262-4A89-99B3-376A44454C38</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://blog.dreamtobe.cn</string>
+</dict>
+</plist>
