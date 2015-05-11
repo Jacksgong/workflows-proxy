@@ -1,5 +1,12 @@
 # Workflows Proxy
 
+#### How To Install
+
+1. Download [Proxy.alfredworkflow](https://github.com/Jacksgong/workflows-proxy/blob/master/Proxy.alfredworkflow?raw=true)
+2. Install Proxy.alfredworkflow
+
+---
+
 `switch Tencent proxy and Home Proxy `
 
 ### 1. Switch to the Tencent Proxy:
